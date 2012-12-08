@@ -11,8 +11,8 @@ class TestMain extends FunSuite {
 
 object CheckMain extends Properties("Main") {
   property("ints are sane") = forAll {
-    a: Int => b: Int => {
-      a > b || a < b || a == b
+    a: Int => {
+      a > 0 || a < 0 || a == 0
     }
   }
 }
