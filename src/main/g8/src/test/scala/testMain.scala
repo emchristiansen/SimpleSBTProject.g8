@@ -12,4 +12,5 @@ class CheckMain extends Properties("Main") {
     a: Int => b: Int => {
       a > b || a < b || a == b
     }
+  }
 }
