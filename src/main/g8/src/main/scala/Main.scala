@@ -1,3 +1,3 @@
 object Main extends App {
-  println("Hello from " + $name$)
+  println("Hello from $name$")
 }

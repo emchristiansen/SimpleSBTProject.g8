@@ -57,7 +57,7 @@ object $name$Build extends Build {
     assemblySettings
 
   lazy val root = {
-    val name = $name$
+    val name = "$name$"
     val settings = libSettings ++ Seq(name := name)
     Project(id = name, base = file("."), settings = settings)
   }
