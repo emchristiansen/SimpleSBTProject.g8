@@ -1,5 +1,7 @@
 import org.scalatest._
+
 import org.scalacheck._
+import org.scalacheck.Prop._
 
 class TestMain extends FunSuite {
   test("one should equal one") {
@@ -7,7 +9,7 @@ class TestMain extends FunSuite {
   }
 }
 
-class CheckMain extends Properties("Main") {
+object CheckMain extends Properties("Main") {
   property("ints are sane") = forAll {
     a: Int => b: Int => {
       a > b || a < b || a == b
