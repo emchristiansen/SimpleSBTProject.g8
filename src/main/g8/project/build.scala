@@ -10,7 +10,6 @@ object $name$Build extends Build {
       "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/",
       "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
 //      "repo.codahale.com" at "http://repo.codahale.com",
-//      "maven.twttr.com" at "http://maven.twttr.com",
       "spray-io" at "http://repo.spray.io/",
       "typesafe-releases" at "http://repo.typesafe.com/typesafe/repo"
     )
@@ -37,15 +36,15 @@ object $name$Build extends Build {
   )
 
   def scalaSettings = Seq(
-    scalaVersion := "2.9.2",
+    scalaVersion := "2.10.0",
     scalacOptions ++= Seq(
       "-optimize",
       "-unchecked",
       "-deprecation"
-      // "-feature",
-      // "-language:implicitConversions",
+      "-feature",
+      "-language:implicitConversions",
       // "-language:reflectiveCalls",
-      // "-language:postfixOps"
+      "-language:postfixOps"
     )
   )
 
