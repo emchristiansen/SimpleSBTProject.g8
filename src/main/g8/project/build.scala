@@ -9,7 +9,7 @@ object $name$Build extends Build {
     resolvers ++= Seq(
       "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/",
       "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
-//      "repo.codahale.com" at "http://repo.codahale.com",                                                                                                                                   
+//      "repo.codahale.com" at "http://repo.codahale.com",
       "spray-io" at "http://repo.spray.io/",
       "typesafe-releases" at "http://repo.typesafe.com/typesafe/repo"
     )
@@ -25,13 +25,13 @@ object $name$Build extends Build {
       "commons-io" % "commons-io" % "2.4",
       "org.scalatest" %% "scalatest" % "2.0.M5b" % "test",
       "org.scalacheck" %% "scalacheck" % "1.10.0" % "test",
-      "org.scala-tools" %% "scala-stm" % "0.6",
+      "org.scala-stm" %% "scala-stm" % "0.7",
       "com.chuusai" %% "shapeless" % "1.2.3",
       "org.clapper" %% "grizzled-scala" % "1.1.3",
       "org.scalanlp" %% "breeze-math" % "0.2-SNAPSHOT",
-      "org.spire-math" % "spire_2.10.0-RC5" % "0.3.0-M6",
+      "org.spire-math" %% "spire" % "0.3.0",
       "org.scalaz" %% "scalaz-core" % "7.0-SNAPSHOT",
-      "io.spray" %%  "spray-json" % "1.2.3" cross CrossVersion.full,
+      "io.spray" %%  "spray-json" % "1.2.3",
       "org.rogach" %% "scallop" % "0.8.0",
       "junit" % "junit" % "4.11" % "test",
       "org.imgscalr" % "imgscalr-lib" % "4.2"
@@ -46,7 +46,7 @@ object $name$Build extends Build {
       "-deprecation",
       "-feature",
       "-language:implicitConversions",
-      // "-language:reflectiveCalls",                                                                                                                                                        
+      // "-language:reflectiveCalls",
       "-language:postfixOps"
     )
   )
