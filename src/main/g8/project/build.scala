@@ -17,6 +17,10 @@ object $name$Build extends Build {
 
   def extraLibraryDependencies = Seq(
     libraryDependencies ++= Seq(
+      "org.expecty" % "expecty" % "0.9",
+      "commons-lang" % "commons-lang" % "2.6",
+      "org.scala-lang" % "scala-reflect" % "2.10.0",
+      "org.scala-lang" % "scala-compiler" % "2.10.0",
       "org.apache.commons" % "commons-math3" % "3.1.1",
       "commons-io" % "commons-io" % "2.4",
       "org.scalatest" %% "scalatest" % "2.0.M5b" % "test",
@@ -24,9 +28,11 @@ object $name$Build extends Build {
       "org.scala-tools" %% "scala-stm" % "0.6",
       "com.chuusai" %% "shapeless" % "1.2.3",
       "org.clapper" %% "grizzled-scala" % "1.1.3",
-      "org.scalanlp" %% "breeze-math" % "0.1",
+      "org.scalanlp" %% "breeze-math" % "0.2-SNAPSHOT",
+      "org.spire-math" % "spire_2.10.0-RC5" % "0.3.0-M6",
       "org.scalaz" %% "scalaz-core" % "7.0-SNAPSHOT",
-      "io.spray" %% "spray-json" % "1.2.2" cross CrossVersion.full,
+      "io.spray" %%  "spray-json" % "1.2.3" cross CrossVersion.full,
+      "org.rogach" %% "scallop" % "0.8.0",
       "junit" % "junit" % "4.11" % "test",
       "org.imgscalr" % "imgscalr-lib" % "4.2"
     )
