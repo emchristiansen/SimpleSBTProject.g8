@@ -4,6 +4,8 @@ import Keys._
 import sbtassembly.Plugin._
 import AssemblyKeys._
 
+import com.typesafe.sbt.SbtStartScript
+
 object $name$Build extends Build {
   def extraResolvers = Seq(
     resolvers ++= Seq(
@@ -17,6 +19,7 @@ object $name$Build extends Build {
 
   def extraLibraryDependencies = Seq(
     libraryDependencies ++= Seq(
+      "nebula" %% "nebula" % "0.1-SNAPSHOT",
       "org.expecty" % "expecty" % "0.9",
       "commons-lang" % "commons-lang" % "2.6",
       "org.scala-lang" % "scala-reflect" % "2.10.0",
@@ -56,7 +59,8 @@ object $name$Build extends Build {
     extraResolvers ++
     extraLibraryDependencies ++
     scalaSettings ++
-    assemblySettings
+    assemblySettings ++
+    SbtStartScript.startScriptForJarSettings
 
   val projectName = "$name$"
   lazy val root = {
