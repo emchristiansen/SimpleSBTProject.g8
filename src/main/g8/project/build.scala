@@ -13,17 +13,23 @@ object $name$Build extends Build {
       "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
 //      "repo.codahale.com" at "http://repo.codahale.com",
       "spray-io" at "http://repo.spray.io/",
-      "typesafe-releases" at "http://repo.typesafe.com/typesafe/repo"
+      "typesafe-releases" at "http://repo.typesafe.com/typesafe/repo",
+      "Local Maven Repository" at Path.userHome.asFile.toURI.toURL + "/.m2/repository"
     )
   )
 
+  val scalaVersionString = "2.10.1-RC3"
+
   def extraLibraryDependencies = Seq(
     libraryDependencies ++= Seq(
+      "opencv" % "opencv" % "2.4.9",
       "nebula" %% "nebula" % "0.1-SNAPSHOT",
+      "billy" %% "billy" % "0.1-SNAPSHOT",
+      "skunkworks" %% "skunkworks" % "0.1-SNAPSHOT",
       "org.expecty" % "expecty" % "0.9",
       "commons-lang" % "commons-lang" % "2.6",
-      "org.scala-lang" % "scala-reflect" % "2.10.0",
-      "org.scala-lang" % "scala-compiler" % "2.10.0",
+      "org.scala-lang" % "scala-reflect" % scalaVersionString,
+      "org.scala-lang" % "scala-compiler" % scalaVersionString,
       "org.apache.commons" % "commons-math3" % "3.1.1",
       "commons-io" % "commons-io" % "2.4",
       "org.scalatest" %% "scalatest" % "2.0.M5b" % "test",
@@ -42,7 +48,7 @@ object $name$Build extends Build {
   )
 
   def scalaSettings = Seq(
-    scalaVersion := "2.10.1-SNAPSHOT",
+    scalaVersion := scalaVersionString,
     scalacOptions ++= Seq(
       "-optimize",
       "-unchecked",
