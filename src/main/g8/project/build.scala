@@ -18,7 +18,7 @@ object $name$Build extends Build {
     )
   )
 
-  val scalaVersionString = "2.10.1-RC3"
+  val scalaVersionString = "2.10.1"
 
   def extraLibraryDependencies = Seq(
     libraryDependencies ++= Seq(
