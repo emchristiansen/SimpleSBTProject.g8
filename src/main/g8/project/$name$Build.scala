@@ -47,6 +47,9 @@ object $name$Build extends Build {
     )
   )
 
+  def updateOnDependencyChange = Seq(
+    watchSources <++= (managedClasspath in Test) map { cp => cp.files })
+
   def scalaSettings = Seq(
     scalaVersion := scalaVersionString,
     scalacOptions ++= Seq(
@@ -60,17 +63,18 @@ object $name$Build extends Build {
     )
   )
 
-  def libSettings =
+  def moreSettings =
     Project.defaultSettings ++
     extraResolvers ++
     extraLibraryDependencies ++
     scalaSettings ++
     assemblySettings ++
-    SbtStartScript.startScriptForJarSettings
+    SbtStartScript.startScriptForJarSettings ++
+    updateOnDependencyChange
 
   val projectName = "$name$"
   lazy val root = {
-    val settings = libSettings ++ Seq(name := projectName, fork := true)
+    val settings = moreSettings ++ Seq(name := projectName, fork := true)
     Project(id = projectName, base = file("."), settings = settings)
   }
 }
