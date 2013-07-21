@@ -9,9 +9,17 @@ import com.typesafe.sbt.SbtStartScript
 object $name$Build extends Build {
   def extraResolvers = Seq(
     resolvers ++= Seq(
+      "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/",
+      "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
       "Local Maven Repository" at Path.userHome.asFile.toURI.toURL + "/.m2/repository"
     )
   )
+
+ val publishSettings = Seq(
+    organization := "emchristiansen",
+    publishMavenStyle := false,
+    publishTo := Some(Resolver.file("file", new File("./releases"))),
+    version := "0.1-SNAPSHOT")
 
   val scalaVersionString = "2.10.2"
 
@@ -58,7 +66,8 @@ object $name$Build extends Build {
     scalaSettings ++
     assemblySettings ++
     SbtStartScript.startScriptForJarSettings ++
-    updateOnDependencyChange
+    updateOnDependencyChange ++
+    publishSettings
 
   val projectName = "$name$"
   lazy val root = {
