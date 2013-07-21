@@ -19,17 +19,17 @@ object $name$Build extends Build {
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersionString,
       "org.scala-lang" % "scala-compiler" % scalaVersionString,
-      "org.apache.commons" % "commons-math3" % "3.1.1",
+      "org.apache.commons" % "commons-math3" % "3.2",
       "commons-io" % "commons-io" % "2.4",
       "org.scalatest" %% "scalatest" % "2.0.M5b" % "test",
-      "org.scalacheck" %% "scalacheck" % "1.10.0" % "test",
+      "org.scalacheck" %% "scalacheck" % "1.10.1" % "test",
       "org.scala-stm" %% "scala-stm" % "0.7",
       "com.chuusai" %% "shapeless" % "1.2.4",
-      "org.clapper" %% "grizzled-scala" % "1.1.3",
+      "org.clapper" %% "grizzled-scala" % "1.1.4",
       "org.scalanlp" %% "breeze-math" % "0.4-SNAPSHOT",
       "org.spire-math" %% "spire" % "0.5.0",
       "org.scalaz" %% "scalaz-core" % "7.0.2",
-      "org.rogach" %% "scallop" % "0.8.1",
+      "org.rogach" %% "scallop" % "0.9.3",
       "junit" % "junit" % "4.11" % "test",
       "com.sksamuel.scrimage" % "scrimage-core" % "1.3.3"
     )
