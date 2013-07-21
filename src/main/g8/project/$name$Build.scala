@@ -11,7 +11,8 @@ object $name$Build extends Build {
     resolvers ++= Seq(
       "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/",
       "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
-      "Local Maven Repository" at Path.userHome.asFile.toURI.toURL + "/.m2/repository"
+      "Local Maven Repository" at Path.userHome.asFile.toURI.toURL + "/.m2/repository",
+      Resolver.url("emchristiansen-scalatest-extra", url("https://raw.github.com/emchristiansen/scalatest-extra/master/releases"))( Patterns("[organisation]/[module]/[revision]/[artifact]-[revision].[ext]") )
     )
   )
 
@@ -39,6 +40,7 @@ object $name$Build extends Build {
       "org.scalaz" %% "scalaz-core" % "7.0.2",
       "org.rogach" %% "scallop" % "0.9.3",
       "junit" % "junit" % "4.11" % "test",
+      "emchristiansen" %% "scalatest-extra" % "0.1-SNAPSHOT",
       "com.sksamuel.scrimage" % "scrimage-core" % "1.3.3"
     )
   )
