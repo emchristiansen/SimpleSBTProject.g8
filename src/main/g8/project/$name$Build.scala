@@ -22,7 +22,7 @@ object $name$Build extends Build {
     publishTo := Some(Resolver.file("file", new File("./releases"))),
     version := "0.1-SNAPSHOT")
 
-  val scalaVersionString = "2.10.2"
+  val scalaVersionString = "2.10.3-RC3"
 
   def extraLibraryDependencies = Seq(
     libraryDependencies ++= Seq(
